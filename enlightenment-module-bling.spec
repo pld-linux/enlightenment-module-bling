@@ -1,31 +1,31 @@
 %define		_snap		20080814
-%define		_module_name	bling
-Summary:	Enlightenment DR17 module: %{_module_name}
-Summary(pl.UTF-8):	Moduł Enlightenmenta DR17: {_module_name}
-Name:		enlightenment-module-%{_module_name}
+%define		module_name	bling
+Summary:	Enlightenment DR17 module: %{module_name}
+Summary(pl.UTF-8):	Moduł Enlightenmenta DR17: %{module_name}
+Name:		enlightenment-module-%{module_name}
 Version:	0.0.1
 Release:	0.%{_snap}.1
 License:	BSD
 Group:		X11/Window Managers/Tools
-Source0:	%{_module_name}-%{version}-%{_snap}.tar.bz2
+Source0:	%{module_name}-%{version}-%{_snap}.tar.bz2
 # Source0-md5:	6d024eb2e6a3e369346e2bb9a7793e7a
 URL:		http://code.google.com/p/itask-module/wiki/ItaskNG
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	enlightenment-devel
+BuildRequires:	enlightenment-devel >= 0.17
 BuildRequires:	gettext-autopoint
 BuildRequires:	libtool
-Requires:	enlightenment
+Requires:	enlightenment >= 0.17
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Bling module is an xcompmgr derived, EFLized composite manager for E17.
 
 %description -l pl.UTF-8
-Moduł Bling jest pochodnym xcompmgr, menadżerem kompozycji dla E17.
+Moduł Bling jest pochodnym xcompmgr zarządcą składania dla E17.
 
 %prep
-%setup -q -n %{_module_name}-%{version}-%{_snap}
+%setup -q -n %{module_name}-%{version}-%{_snap}
 
 %build
 %{__autopoint}
@@ -50,8 +50,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README TODO
-%dir %{_libdir}/enlightenment/modules/%{_module_name}
-%dir %{_libdir}/enlightenment/modules/%{_module_name}/linux-gnu-*
-%attr(755,root,root) %{_libdir}/enlightenment/modules/%{_module_name}/linux-gnu-*/module.so
-%{_libdir}/enlightenment/modules/%{_module_name}/module.desktop
-%{_libdir}/enlightenment/modules/%{_module_name}/*.edj
+%dir %{_libdir}/enlightenment/modules/%{module_name}
+%dir %{_libdir}/enlightenment/modules/%{module_name}/linux-gnu-*
+%attr(755,root,root) %{_libdir}/enlightenment/modules/%{module_name}/linux-gnu-*/module.so
+%{_libdir}/enlightenment/modules/%{module_name}/module.desktop
+%{_libdir}/enlightenment/modules/%{module_name}/*.edj
