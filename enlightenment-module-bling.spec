@@ -12,14 +12,15 @@ Source0:	%{module_name}-%{version}-%{_snap}.tar.bz2
 URL:		http://code.google.com/p/itask-module/wiki/ItaskNG
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	enlightenment-devel >= 0.17
+BuildRequires:	enlightenment-devel >= 0.16.999.044
 BuildRequires:	gettext-autopoint
 BuildRequires:	libtool
-Requires:	enlightenment >= 0.17
+Requires:	enlightenment >= 0.16.999.044
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Bling module is an xcompmgr derived, EFLized composite manager for E17.
+Bling module is an xcompmgr derived, EFLized composite manager for
+E17.
 
 %description -l pl.UTF-8
 Moduł Bling jest pochodnym xcompmgr zarządcą składania dla E17.
